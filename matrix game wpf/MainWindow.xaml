@@ -1,0 +1,70 @@
+﻿<Window x:Class="matrix_game_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:matrix_game_wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBox x:Name="tbAa" Grid.Row="1" Grid.Column="1" Text="3" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbAb" Grid.Row="1" Grid.Column="2" Text="1" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbAy" Grid.Row="1" Grid.Column="3" Text="7" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbBa" Grid.Row="2" Grid.Column="1" Text="4" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbCa" Grid.Row="3" Grid.Column="1" Text="4" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbBb" Grid.Row="2" Grid.Column="2" Text="6" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbBy" Grid.Row="2" Grid.Column="3" Text="2" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbCb" Grid.Row="3" Grid.Column="2" Text="3" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="tbCy" Grid.Row="3" Grid.Column="3" Text="4" FontSize="30" HorizontalContentAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="a" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Text="b" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="3" Text="y" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="1" Text="A" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="2" Text="B" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="3" Text="C" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+                <Button x:Name="btCalculate" Grid.Row="1" Click="Button_Click" Content="Вычислить" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <DataGrid Grid.Column="1" x:Name="dgMatrix" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Шаг" Binding="{Binding step}"/>
+                <DataGridTextColumn Header="стратегия 1" Binding="{Binding p1method}"/>
+                <DataGridTextColumn Header="стратегия 2" Binding="{Binding p2method}"/>
+                <DataGridTextColumn Header="A" Binding="{Binding p1A}"/>
+                <DataGridTextColumn Header="B" Binding="{Binding p1B}"/>
+                <DataGridTextColumn Header="C" Binding="{Binding p1C}"/>
+                <DataGridTextColumn Header="a" Binding="{Binding p2a}"/>
+                <DataGridTextColumn Header="b" Binding="{Binding p2b}"/>
+                <DataGridTextColumn Header="y" Binding="{Binding p2y}"/>
+                <DataGridTextColumn Header="vI/i(1)" Binding="{Binding vl1}"/>
+                <DataGridTextColumn Header="vI/i(2)" Binding="{Binding vl2}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Grid>
+</Window>
